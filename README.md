@@ -1,3 +1,7 @@
+[![make.fun · gta6-01](https://make.fun/badge/gta6-01.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
+[![rank](https://make.fun/badge/gta6-01/alenoathera/gta6-game/rank.svg)](https://make.fun/bounty/gta6-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
+[![reward](https://make.fun/badge/gta6-01/alenoathera/gta6-game/reward.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
+
 # Solara Bay: Vice Underground (GTA 6 Open-World Action)
 
 An original 3D open-world action-adventure game set in the sun-drenched coastal metropolis of **Solara Bay**. Built with procedural 3D graphics in Three.js and dynamic WebAudio sound synthesis, playable entirely offline in any modern desktop browser.
