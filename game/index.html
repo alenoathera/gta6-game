@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solara Bay: Vice Underground</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three.min.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Top Left: Status & Cash -->
+    <div id="hud-top-left" class="hud-panel">
+      <div class="hud-brand">SOLARA BAY</div>
+      <div class="hud-stat-row">
+        <span class="hud-label">HEALTH</span>
+        <div class="health-bar-bg"><div id="health-bar-fill"></div></div>
+      </div>
+      <div class="hud-stat-row">
+        <span class="hud-label">CASH</span>
+        <span id="cash-display" class="cash-text">$1,500</span>
+      </div>
+      <div id="wanted-container" class="wanted-stars">
+        <span class="star" id="star-1">★</span>
+        <span class="star" id="star-2">★</span>
+        <span class="star" id="star-3">★</span>
+        <span class="star" id="star-4">★</span>
+        <span class="star" id="star-5">★</span>
+      </div>
+    </div>
+
+    <!-- Top Right: Speed & Weapon -->
+    <div id="hud-top-right" class="hud-panel">
+      <div id="vehicle-hud" class="vehicle-hud">
+        <div class="speed-value"><span id="speed-display">0</span> <small>MPH</small></div>
+        <div id="vehicle-name" class="sub-label">WALKING</div>
+      </div>
+      <div id="weapon-hud" class="weapon-hud">
+        <div class="weapon-name" id="weapon-display">FISTS</div>
+        <div class="ammo-count" id="ammo-display">READY</div>
+      </div>
+    </div>
+
+    <!-- Bottom Left: Minimap Radar -->
+    <div id="hud-bottom-left">
+      <div class="minimap-frame">
+        <canvas id="minimap-canvas" width="180" height="180"></canvas>
+        <div class="minimap-compass">N</div>
+      </div>
+      <div class="controls-hint">
+        WASD: Move/Drive | F: Enter/Exit | L-Click: Attack | Space: Jump/Handbrake
+      </div>
+    </div>
+
+    <!-- Bottom Center: Mission Banner & Dialogue -->
+    <div id="hud-mission-banner" class="hud-banner">
+      <div class="mission-header" id="mission-title">MISSION 1: REPO RUN</div>
+      <div class="mission-task" id="mission-task">Steal the yellow Cheetah sports car at Marina Plaza</div>
+      <div id="dialogue-box" class="dialogue-box hidden">
+        <div class="dialogue-speaker" id="dialogue-speaker">EDDIE RAMOS</div>
+        <div class="dialogue-text" id="dialogue-text">"Maya, grab that ride before the Vultures lock it down!"</div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="hud-toast" class="toast hidden"></div>
+
+    <!-- Start / Title Screen -->
+    <div id="screen-start" class="screen-overlay">
+      <div class="screen-box">
+        <h1 class="logo-title">SOLARA BAY</h1>
+        <p class="logo-subtitle">VICE UNDERGROUND</p>
+        <div class="story-blurb">
+          Step into the neon-soaked streets of Solara Bay as <strong>Maya Cruz</strong>.
+          Take the wheel, build your syndicate, pull off daring heists, and take back the streets
+          from The Vultures.
+        </div>
+        <div class="controls-grid">
+          <div><strong>WASD / Arrows</strong>: Walk / Drive</div>
+          <div><strong>F / Enter</strong>: Enter / Steal Car</div>
+          <div><strong>Space</strong>: Jump / Handbrake</div>
+          <div><strong>Left Click</strong>: Punch / Fire Weapon</div>
+          <div><strong>Right Click / Shift</strong>: Aim / Sprint</div>
+          <div><strong>M</strong>: Toggle Audio Mute</div>
+        </div>
+        <button id="btn-start" class="neon-btn">START GAME</button>
+      </div>
+    </div>
+
+    <!-- Busted Screen -->
+    <div id="screen-busted" class="screen-overlay hidden">
+      <div class="screen-box alert-box">
+        <h1 class="bust-title">BUSTED</h1>
+        <p>The Solara Bay Police Department took you in.</p>
+        <p class="fine-text">Bail & Impound Fine: $200</p>
+        <button id="btn-respawn-busted" class="neon-btn">RESPAWN AT STATION</button>
+      </div>
+    </div>
+
+    <!-- Wasted Screen -->
+    <div id="screen-wasted" class="screen-overlay hidden">
+      <div class="screen-box alert-box">
+        <h1 class="waste-title">WASTED</h1>
+        <p>Hospitalized at Solara General Hospital.</p>
+        <p class="fine-text">Medical Bill: $150</p>
+        <button id="btn-respawn-wasted" class="neon-btn">RESPAWN AT HOSPITAL</button>
+      </div>
+    </div>
+
+    <!-- Pause Screen -->
+    <div id="screen-pause" class="screen-overlay hidden">
+      <div class="screen-box">
+        <h2 class="pause-title">GAME PAUSED</h2>
+        <button id="btn-resume" class="neon-btn">RESUME</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
